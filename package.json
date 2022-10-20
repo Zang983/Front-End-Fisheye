@@ -1,0 +1,22 @@
+{
+  "name": "fisheye-project",
+  "version": "1.0.0",
+  "description": "6th project of Openclassrooms formation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zang983/Front-End-Fisheye.git"
+  },
+  "author": "Kevin KERKAR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zang983/Front-End-Fisheye/issues"
+  },
+  "homepage": "https://github.com/Zang983/Front-End-Fisheye#readme",
+  "devDependencies": {
+    "eslint": "^8.25.0"
+  }
+}
