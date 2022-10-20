@@ -1,3 +1,4 @@
+// SI la personne revient trop en arrière : bug d'affichage
 /**
  * This class manage the contact modal with:
  * - a toggle function who change aria-hidden informations and change dispaly
@@ -30,11 +31,11 @@ export default class Modal {
         this.modal.setAttribute("aria-hidden", `${!this.visible}`)
 
         if (this.visible) {
-            document.querySelector("body").style.overflow="hidden"
+            document.querySelector("body").style.overflow = "hidden"
             this.modal.style.display = "flex"
         }
         else {
-            document.querySelector("body").style.overflow="initial"
+            document.querySelector("body").style.overflow = "initial"
             this.modal.style.display = "none";
         }
 
@@ -42,7 +43,7 @@ export default class Modal {
     initEvent() {
         this.openButton.addEventListener("click", () => {
             this.toggleModal();
-            this.inputs[0].focus()
+            this.inputs[0].focus({ preventScroll: true, focusVisible: true })
         })
         this.closeBtn.addEventListener("click", () => {
             this.toggleModal()
@@ -57,9 +58,13 @@ export default class Modal {
             this.textarea.value = ""
             this.toggleModal()
         })
-        this.modal.addEventListener("keydown", e => {
-            if (e.key === "Escape") {
-                this.toggleModal()
+        window.addEventListener("keydown", e => {
+            if (this.visible) {
+
+
+                if (e.key === "Escape") {
+                    this.toggleModal()
+                }
             }
         })
     }

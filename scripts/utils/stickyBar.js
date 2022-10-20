@@ -22,3 +22,4 @@ export default function stickyBar(photographer) {
     document.querySelector("body").append(stickyBar)
 
 }
+/* a retirer en mode ligthbox*/
