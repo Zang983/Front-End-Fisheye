@@ -1,10 +1,16 @@
-
+/*
+Function who toggle the display of <ul> filter block
+*/
 export function toggleFilter() {
     let btn = document.querySelector("#filterBlock button")
     btn.getAttribute("aria-expanded") === "true" ? btn.setAttribute("aria-expanded", "false") : btn.setAttribute("aria-expanded", "true")
     document.querySelector(".sortOf").classList.toggle("hidden")
 }
-
+/**
+ * 
+ * @param {PhotographerObject} photographer 
+ * @param {String} parameter //which li was selected by user
+ */
 export function callPhotographerSort(photographer, parameter) {
     let btn = document.querySelector("#filterBlock button span")
     if (parameter === "Popularité") {
@@ -21,6 +27,11 @@ export function callPhotographerSort(photographer, parameter) {
     }
 }
 
+/**
+ * 
+ * @param {PhotographerObject} photographer 
+ * Manage filter's events and make hidden li already selected
+ */
 export function filterEvent(photographer) {
 
     let lis = document.querySelectorAll(".sortOf li")
@@ -42,16 +53,15 @@ export function filterEvent(photographer) {
         }
         toggleFilter()
     })
-        for (let li of lis) {
-            li.addEventListener("keypress",e=>{
-                    if (e.key === "Enter") {
-                        callPhotographerSort(photographer, e.target.innerText)
-                        toggleFilter()
-                    }
-            })
+    for (let li of lis) {
+        li.addEventListener("keypress", e => {
+            if (e.key === "Enter") {
+                callPhotographerSort(photographer, e.target.innerText)
+                toggleFilter()
+            }
+        })
 
-        }
-  
+    }
     /*
     add click listener to sort of
     */

@@ -1,5 +1,5 @@
     import PhotographerFactory from '../factories/photographer.js'
-    import {getUserCardDOM} from "../vue/photographerCard.js"
+    import {createPhotogapherCardDOM} from "../vue/photographerCard.js"
 
 
     fetch("./data/photographers.json")
@@ -7,10 +7,8 @@
     .then(data =>{
         for(let item of data.photographers){
             let photographer = PhotographerFactory(item,"json")
-            let card = getUserCardDOM(photographer)
+            let card = createPhotogapherCardDOM(photographer)
             document.querySelector(".photographer_section").append(card)
-
-
             
         }
     })

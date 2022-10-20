@@ -1,4 +1,9 @@
-export function getUserCardDOM(photographer) {
+/**
+ * this function create 
+ * @param {PhotographerObject} photographer 
+ * @returns {HTMLElement} 
+ */
+export function createPhotogapherCardDOM(photographer) {
     let picture = `./data/medias/avatar/${photographer.portrait}`
 
     const article = document.createElement("article")
@@ -32,7 +37,6 @@ export function getUserCardDOM(photographer) {
     article.append(a,localisation,quote,price)
 
     figure.append(img,figcaption);
-
 
     return (article);
 }
