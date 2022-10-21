@@ -24,10 +24,11 @@ export default class lightbox {
             document.querySelector("header"),
             document.querySelector("main"),
             document.querySelector("#contact_modal"),
-            document.querySelector("#stickyBar")
+            document.querySelector(".stickyBar")
         ]
         if (this.visible) {
             document.querySelector("body").style.overflow="hidden"
+            document.querySelector(".stickyBar").classList.toggle("hidden")
             for (let element of othersDomElement) {
                 element.setAttribute("aria-hidden", "true")
             }
@@ -35,6 +36,7 @@ export default class lightbox {
             this.domElement.setAttribute("aria-hidden", "false")
         }
         else {
+            document.querySelector(".stickyBar").classList.toggle("hidden")
             document.querySelector("body").style.overflow="initial"
             for (let element of othersDomElement) {
                 element.setAttribute("aria-hidden", "false")

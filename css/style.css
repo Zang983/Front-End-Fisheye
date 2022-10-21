@@ -397,9 +397,7 @@ Modal can be show without scroll on 1024*768p
 .chevron.rotated{
     transform: rotate(-180deg);
 }
-.hidden, #filterBlock li.hidden{
-    display:none; 
-} 
+
 .stickyBar{
     position:sticky;
     background-color:#DB8876;
@@ -420,3 +418,6 @@ Modal can be show without scroll on 1024*768p
     align-items: center;
     gap:10px;
 }
+.hidden, #filterBlock li.hidden,.stickyBar.hidden{
+    display:none; 
+} 
