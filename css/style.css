@@ -31,7 +31,7 @@ header {
     height: 90px;
 }
 
-h1 {
+header h1 {
     color: #901C1C;
     margin-right: 100px;
 }
@@ -134,7 +134,7 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
 }
-.contact_button:focus,.contact_button:hover,.submit_button:hover ,.submit_button:focus{
+.contact_button:focus,.contact_button:hover{
     background-color:#DB8876;
     color:black;
 }
