@@ -43,6 +43,5 @@ fetch("./data/photographers.json")
         let lightbox =  new Lightbox(photographer)
         lightbox.lightboxOpenEvent()
 
-
     })
 

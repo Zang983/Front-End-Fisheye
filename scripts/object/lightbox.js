@@ -27,7 +27,7 @@ export default class lightbox {
             document.querySelector(".stickyBar")
         ]
         if (this.visible) {
-            document.querySelector("body").style.overflow="hidden"
+            document.querySelector("body").style.overflow = "hidden"
             document.querySelector(".stickyBar").classList.toggle("hidden")
             for (let element of othersDomElement) {
                 element.setAttribute("aria-hidden", "true")
@@ -37,7 +37,7 @@ export default class lightbox {
         }
         else {
             document.querySelector(".stickyBar").classList.toggle("hidden")
-            document.querySelector("body").style.overflow="initial"
+            document.querySelector("body").style.overflow = "initial"
             for (let element of othersDomElement) {
                 element.setAttribute("aria-hidden", "false")
             }
@@ -57,7 +57,14 @@ export default class lightbox {
         for (let link of linksFigure) {
             link.addEventListener("click", (e) => {
                 e.preventDefault()
-                let filepath = e.target.getAttribute("src").split("/")
+                let filepath = ""
+                if (e.path.length === 8) {
+                    filepath = e.target.firstChild.getAttribute("src")
+                }
+                else {
+                    filepath = e.target.getAttribute("src")
+                }
+                filepath = filepath.split("/")
                 let filename = filepath[filepath.length - 1]
                 this.toggleVisibility()
                 if (this.visible) {
@@ -71,7 +78,7 @@ export default class lightbox {
 
     /**
      * 
-     * @param {stringg} filename 
+     * @param {string} filename 
      * when call for the first time we find index with filename.
      * call createCard from import
      */

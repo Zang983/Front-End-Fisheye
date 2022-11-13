@@ -8,10 +8,7 @@
         for(let item of data.photographers){
             let photographer = PhotographerFactory(item,"json")
             let card = createPhotogapherCardDOM(photographer)
-            document.querySelector(".photographer_section").append(card)
-            
+            document.querySelector(".photographer_section").append(card) 
         }
     })
 
-
-    
