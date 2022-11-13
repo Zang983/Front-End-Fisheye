@@ -221,6 +221,12 @@ header h1 {
     color:#901C1C;
     font-weight:400;
 }
+#mediaGallery h3{
+    font-size:24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 figcaption button{
     color:#901C1C;
