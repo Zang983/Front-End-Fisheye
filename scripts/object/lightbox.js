@@ -57,12 +57,13 @@ export default class lightbox {
         for (let link of linksFigure) {
             link.addEventListener("click", (e) => {
                 e.preventDefault()
-                let filepath = ""
-                if (e.path.length === 8) {
+                let filepath = 
+                console.log(e)
+                if (e.path && e.path.length === 8) {
                     filepath = e.target.firstChild.getAttribute("src")
                 }
                 else {
-                    filepath = e.target.getAttribute("src")
+                    filepath = e.target.currentSrc
                 }
                 filepath = filepath.split("/")
                 let filename = filepath[filepath.length - 1]

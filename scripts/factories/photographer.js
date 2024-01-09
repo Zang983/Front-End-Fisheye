@@ -5,6 +5,5 @@ export default function photographerFactory(data,src) {
         return new photographerObj(data)
     }
 
-
     }
    
